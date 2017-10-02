@@ -1,0 +1,268 @@
+@media (max-width:1399px) {
+  .container {
+    width: 95%;
+  }
+  .foo-enquires {
+      width: 84%;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .nav-menu {
+    ul {
+      li {
+        &:not(:first-child) {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .foo-container {
+    width: 90%;
+  }
+  .probiotics-wrap {
+    padding: 0 50px 70px;
+  }
+  .service-wrap {
+    ul {
+      li {
+        h2 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+  .prod-list .img-prod figure img {
+    width: auto;
+    height: 100%;
+  }
+  .prod-list li:nth-child(2) > div {
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .nav-menu {
+    ul {
+      li {
+        &:not(:first-child) {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+  .foo-enquires {
+    form {
+      width: 90%;
+      input {
+        width: 48%;
+        margin: 0 0 30px;
+      }
+    }
+  }
+  .quality-assurance {
+    .container {
+      width: 90%;
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .probiotics-wrap {
+    width: 100%;
+  }
+  .about-nav ul li {
+    border: none;
+  }
+  .about-nav ul li:hover {
+    border: none;
+  }
+  .about-nav ul li:not(:last-child) {
+    margin: 0;
+  }
+  .manufactured-what {
+    .about-what-wrap {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .service-wrap {
+    ul {
+      li {
+        width: 33.333%;
+        &:nth-child(n+4) {
+          border-top: 2px solid #e8e8e8;
+        }
+        &:nth-child(6) {
+          padding: 55px 0 68px;
+          border-bottom: 2px solid #e8e8e8;
+        }
+        &:not(:nth-child(4n+4)) {
+          border-right: 0px solid #e8e8e8;
+        }
+        &:not(:nth-child(3n+3)) {
+          border-right: 2px solid #e8e8e8;
+        }
+        h2 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  .quality-assurance {
+    .container {
+      figure {
+        text-align: center;
+        margin: 0 0 40px;
+        img {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .banner-text {
+    width: 70%;
+    left: 50%;
+    bottom: 80px;
+    @include translate(-50%, 0);
+    h1 {
+      font-size: 30px;
+      line-height: 30px;
+    }
+    h3 {
+      font-size: 18px;
+      line-height: 28px;
+      margin: 25px 0 0;
+    }
+  }
+  .footer-wrap {
+    margin:-280px 0 0;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .pre-header {
+    display: none;
+  }
+  .nav-menu {
+    height: 80px;
+    p {
+      a {
+        img {
+          height: 60%;
+        }
+      }
+    }
+  }
+  .mobile-menu-bar {
+    margin: 26px auto;
+  }
+  .foo-enquires {
+    padding: 95px 20px 45px;
+    form {
+      width: 90%;
+      input {
+        width: 100%;
+        margin: 0 0 30px;
+      }
+    }
+  }
+  .foo-container {
+    @include flex-wrap(wrap);
+    div {
+      width: 50%;
+      margin: 0 0 40px;
+    }
+  }
+
+  //inner-menu
+  .inner-banner {
+    p {
+      padding: 0 10%;
+    }
+  }
+  .inner-title  {
+    h3 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 1em;
+      line-height: 26px;
+      span {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+  .service-wrap {
+    ul {
+      li {
+        width: 50%;
+        &:nth-child(n+4) {
+          border-top: 0px solid #e8e8e8;
+        }
+        &:not(:nth-child(n+7)) {
+          border-bottom: 2px solid #e8e8e8;
+        }
+        &:nth-child(6) {
+          padding: 55px 0 65px;
+          border-bottom: 2 solid #e8e8e8;
+        }
+        &:not(:nth-child(4n+4)) {
+          border-right: 0 solid #e8e8e8;
+        }
+        &:not(:nth-child(3n+3)) {
+          border-right: 0 solid #e8e8e8;
+        }
+        &:nth-child(odd) {
+          border-right: 2px solid #e8e8e8;
+        }
+        h2 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .foo-container {
+    text-align: center;
+    div {
+      width: 100%;
+      &:not(:last-child) {
+        ul {
+          li {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .manufactured-what {
+    .about-what-wrap {
+      div {
+        width: 100% !important;
+      }
+    }
+  }
+  .service-wrap {
+    ul {
+      li {
+        width: 100%;
+        &:nth-child(odd) {
+          border-right: 0px solid #e8e8e8;
+        }
+        &:nth-child(7) {
+          border-bottom: 2px solid #e8e8e8;
+        }
+        h2 {
+          font-size: 22px;
+          line-height: 27px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.manufacture-wrap {
+  @extend .about-who;
+  .who-cont {
+    ul {
+      li {
+        padding: 0 0 35px 35px;
+        background: url(../images/ico_check.png) no-repeat left top 5px;
+      }
+    }
+  }
+}
+.manufacturing-principle {
+  @extend .about-principle;
+  .lead-wrap {
+    .lead-round {
+      p {
+        margin: 20px 0 0;
+        a {
+          color: #3bb2b3;
+          padding: 0 0 5px;
+          border-bottom: 1px solid #3bb2b3;
+          font-family: 'MontserratMedium';
+        }
+      }
+    }
+  }
+}
+.manufactured-what {
+  @extend .about-what;
+  margin: 0 0 80px;
+  .manufactured-what-left {
+    margin: 0 10px 10px 0;
+    background: url(../images/about_who.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .manufactured-what-right {
+    figure {
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+  }
+}

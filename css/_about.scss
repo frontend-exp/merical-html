@@ -1,0 +1,134 @@
+.about-principle {
+    @extend .leading;
+    background: url(../images/about_bg2.jpg) no-repeat center;
+    background-size: cover;
+    margin: 0 0 10px;
+    &:after {
+        display: none
+    }
+}
+.about-edge {
+    @extend .leading;
+    background: url(../images/about_bg3.jpg) no-repeat center;
+    background-size: cover;
+    margin: 0 0 80px;
+    .lead-wrap {
+        margin-right: 0;
+        margin-left: auto !important;
+        &:after {
+            left: -50px !important;
+            right: auto !important;
+            border-color:  transparent rgba(255,255,255,0.87) transparent transparent;
+            @include rotate (180);
+        }
+    }
+}
+.about-who {
+    .about-who-wrap {
+        display: flex;
+        margin: 0 0 10px;
+        & > div {
+            width: 50%;
+        }
+        .who-left {
+            padding: 0 10px 0 0;
+            background: url(../images/about_who.jpg) no-repeat center;
+            background-size: cover;
+            figure {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .who-right {
+          background: #f9f9f9;
+        }
+    }
+}
+
+.who-cont {
+    padding: 100px 0 100px 120px;
+    width: 80%;
+    h6 {
+        font-family: $mont-bold;
+        color: #000033;
+        font-size: 26px;
+        padding-bottom: 22px;
+        margin: 0 0 35px;
+        position: relative;
+        text-transform: uppercase;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: #3fb1b3;
+            width: 90px;
+            height: 2px;
+        }
+    }
+    p {
+        font-family: $robo-reg;
+        font-size: 16px;
+        line-height: 33px;
+        &.highlight {
+            font-family: $robo-bold;
+            font-size: 17px;
+            line-height: 32px;
+            color: #000033;
+            margin: 0 0 55px;
+        }
+    }
+}
+.about-what {
+    .about-what-wrap {
+        display: flex;
+        margin: 0 0 10px;
+        figure {
+                img {
+                    width: 100%;
+                }
+            }
+        & > div {
+            width: 50%;
+        }
+        .what-left {
+            padding: 0 10px 0 0;
+        }
+        .what-right {
+            background: url(../images/what_right.jpg) no-repeat center;
+            background-size: cover;
+        }
+    }
+}
+
+.about-nav {
+    padding: 25px 0 25px;
+    display: flex;
+    justify-content: center;
+    background: #3bb2b3;
+    width: 100%;
+    text-transform: uppercase;
+    ul {
+        @include flexbox();
+        li {
+          text-align: center;
+          letter-spacing: 4px;
+          font-size: 15px;
+          font-family: 'MontserratMedium';
+          height: 35px;
+          border-bottom: 2px solid transparent;
+          @include flexbox();
+          @include align-items(center);
+          &:not(:last-child){
+            margin: 0 50px 0 0;
+          }
+          .active {
+            border-bottom: 2px solid #fff;
+          }
+          a {
+            color: #fff;
+          }
+        }
+    }
+}

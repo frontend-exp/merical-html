@@ -1,0 +1,130 @@
+.inner-banner {
+	height:348px;
+	text-align:center;
+	color:#fff;
+	display:table;
+	width:100%;
+  background-size:cover;
+  background-attachment:fixed;
+  h5 {
+    font-family: 'montserratbold';
+  	display:block;
+  	font-size:1.625em;
+  	text-transform:uppercase;
+  	padding:0 0 10px;
+  }
+  p {
+    font-size:1em;
+    font-family: 'robotobold';
+  	padding:0 30%;
+  	line-height:2em;
+  }
+  
+}
+.inner-banner-text {
+	display:table-cell;
+	vertical-align:middle;
+}
+.inner-title {
+  text-align:center;
+	padding:88px 0 78px;
+  h3 {
+    font-family: 'montserratthin';
+  	font-size:5em;
+    text-transform: uppercase;
+  }
+  p {
+    font-size:1.625em;
+    line-height: 43px;
+    font-family: 'robotolight';
+    span {
+      font-family: 'robotobold';
+    }
+  }
+}
+
+//Inner Menu
+.inner-menu {
+  background: #3bb2b3;
+  height: 100px;
+  @include flexbox();
+  ul {
+    width: 950px;
+    margin: 0 auto;
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    li {
+      text-align: center;
+      letter-spacing: 4px;
+      font-size: 15px;
+      font-family: 'MontserratMedium';
+      height: 35px;
+      border-bottom: 2px solid transparent;
+      @include flexbox();
+      @include align-items(center);
+      &:not(:last-child){
+        margin: 0 50px 0 0;
+      }
+      &:hover {
+        border-bottom: 2px solid #fff;
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+.probiotics-cont-wrap {
+  @include flexbox();
+  .probiotics-images {
+    width: 50%;
+    overflow: hidden;
+  }
+  figure {
+    border: 2px solid #fff;
+    img {
+      height: 100%;
+    }
+  }
+}
+.probiotics-wrap {
+  width: 50%;
+  padding: 0 120px 130px;
+}
+.probiotics-content {
+  h2 {
+    font-size: 26px;
+    line-height: 26px;
+    font-family: 'montserratbold';
+    padding: 0 0 22px;
+    margin: 90px 0 30px;
+    position: relative;
+    text-transform: uppercase;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 90px;
+      height: 2px;
+      background: #3fb1b3;
+    }
+  }
+  h4 {
+    font-size: 17px;
+    font-family: 'robotobold';
+    color: #000033;
+    line-height: 32px;
+  }
+  p {
+    line-height: 33px;
+    margin: 55px 0 45px;
+  }
+  ul {
+    li {
+      padding: 0 0 35px 35px;
+      background: url("../images/ico_check.png") no-repeat left top 5px;
+    }
+  }
+}

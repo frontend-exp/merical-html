@@ -1,0 +1,648 @@
+// Marcial Stylesheet
+@import "reset";
+@import "mixin";
+
+//Font Varibale
+$mont-bold: 'MontserratBold';
+$mont-mdm: 'MontserratMedium';
+$robo-bold:'robotobold';
+$robo-reg: 'robotoregular';
+$robo-mdm: 'robotomedium';
+$robo-light: 'robotolight';
+
+//Font Size
+$font-13: 13px;
+$font-14: 14px;
+$font-16: 16px;
+$font-22: 22px;
+$font-35: 35px;
+$font-40: 40px;
+
+* {
+  outline: none;
+}
+a {
+  display: block;
+  @include transition(0.5s all);
+}
+a:focus {
+  text-decoration: none;
+}
+body {
+  color: #2e2d2d;
+  background: #f8f8f8;
+  font-size: 18px;
+  font-family: $robo-reg;
+}
+#wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+.container {
+  width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+//Header
+header {
+  background: #fff;
+}
+.pre-header {
+  width: 100%;
+  background: #f3f3f3;
+  ul {
+    font-size: $font-13;
+    @include flexbox();
+    @include justify-content(flex-end);
+    li {
+      @include flexbox();
+      font-family: 'MontserratBold';
+      font-weight: 600;
+      &:last-child {
+        a {
+          padding: 15px 0 15px 40px;
+          border: none;
+          color: #3fb1b3;
+          @include transition(0.5s all);
+          &:hover {
+            color: #000033;
+          }
+        }
+      }
+      a {
+        padding: 15px 40px;
+        color: #000033;
+        border-right: 1px solid #dadada;
+        @include transition(0.5s all);
+        &:hover {
+          color: #3bb2b3;
+        }
+      }
+    }
+  }
+}
+.nav-menu {
+  height: 134px;
+  .logo {
+    float: left;
+    height: 100%;
+    a {
+      height: 100%;
+      @include flexbox();
+      @include align-items(center);
+    }
+  }
+  ul {
+    height: 100%;
+    float: right;
+    font-size: $font-16;
+    @include flexbox();
+    @include justify-content(flex-end);
+    li {
+      height: 100%;
+      &:not(:first-child) {
+        padding-left: 48px;
+      }
+      a {
+        height: 100%;
+        color: #000033;
+        border-bottom: 3px solid transparent;
+        font-family: $mont-mdm;
+        @include flexbox();
+        @include align-items(center);
+        &:hover, &.active {
+          color: #3bb2b3;
+          border-bottom: 3px solid #3bb2b3;
+        }
+      }
+    }
+  }
+}
+// Mobile Menu
+.mobile-menu-bar {
+  float: right;
+  height: 100%;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  margin: 60px auto;
+  cursor: pointer;
+  @include rotate (0);
+  @include transition (.5s ease-in-out);
+  @include flexbox();
+  @include align-items(center);
+  //Active stat
+  &.open {
+    position: fixed;
+    right: 10px;
+    z-index: 1000;
+    span {
+      &:nth-child(1) {
+        top: 10px;
+        @include rotate (135);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+      &:nth-child(3) {
+        top: 10px;
+        @include rotate (-135);
+      }
+    }
+  }
+  span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: #031449;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    @include rotate (0);
+    @include transition (.25s ease-in-out);
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 10px;
+    }
+    &:nth-child(3) {
+      top: 20px;
+    }
+  }
+}
+.mobile-nav-wrap {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 111;
+  background: rgba(255,255,255,0.7);
+  display: none;
+  &.active {
+    display: block;
+  }
+  ul {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    @include translate(0, -50%);
+    li {
+      margin-bottom: 20px;
+      a {
+        font-family: $mont-bold;
+        color: #031449;
+      }
+    }
+  }
+}
+
+//Banner
+.banner-wrap {
+  margin: 0 0 85px;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 140px;
+    background: #3fb1b3;
+    bottom: -70px;
+    left: 50%;
+    @include translate(-50%, 0);
+  }
+  ul {
+    height: 100%;
+    .slick-arrow {
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      z-index: 1;
+      width: 22px;
+      height: 26px;
+      text-indent: -9999px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-image: url("../images/banner/arrow.png");
+      border: none;
+      @include translate(0, -50%);
+      &.slick-next {
+        background-position: right top;
+        left: initial;
+        right: 30px;
+      }
+    }
+    li {
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      &.banner1 {
+        background-image: url("../images/banner/img1.jpg")
+      }
+    }
+  }
+  p {
+    display: flex;
+    font-family: $mont-bold;
+    font-weight: 500;
+    position: absolute;
+    bottom: 96px;
+    left: 160px;
+    a {
+      width: 100px;
+      padding: 0 0 9px;
+      margin: 0 20px 0 0;
+      color: #323745;
+      border-bottom: 1px solid #323745;
+      text-align: right;
+      &.slick-active {
+        color: #299597;
+        border-color: #299597;
+      }
+    }
+  }
+}
+.banner-text {
+  width: 710px;
+  position: absolute;
+  left: 160px;
+  bottom: 175px;
+  h1 {
+    font-size: $font-40;
+    font-family: $mont-bold;
+    text-transform: uppercase;
+    color: #031449;
+    line-height: 43px;
+  }
+  h3 {
+    font-size: $font-22;
+    font-family: $robo-bold;
+    color: #323745;
+    line-height: 34px;
+    margin: 40px 0 0;
+  }
+}
+.slick-track, .slick-list {
+  height: 100%;
+}
+
+//Our History
+.our-history {
+  background: url("../images/bg_history.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+  height: 670px;
+  padding: 80px 0 0;
+  margin: 0 0 80px;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 140px;
+    background: #3fb1b3;
+    bottom: -70px;
+    left: 50%;
+    @include translate(-50%, 0);
+  }
+  p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%, -50%);
+    a {
+      width: 131px;
+      height: 131px;
+      background: url("../images/ico_play.png") no-repeat center;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+  // VIDEO
+.modal {
+    z-index: 10000;
+    overflow: hidden;
+}
+.modal-body {
+    padding: 0;
+    height: 100%;
+}
+.modal-content {
+    background: none;
+    border: none;
+    height: 100%;
+}
+.modal-dialog {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.iframe_pos {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.btn-default, .btn-default:hover {
+    background: none;
+    border: none;
+}
+button {
+  &.close {
+    position: absolute;
+    right: 10px;
+    top: -15px;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+    opacity: 1;
+    z-index: 1;
+    padding: 10px 20px;
+    background: #000;
+  }
+}
+
+//Our Certification
+.home-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: $font-35;
+  font-family: $mont-bold;
+}
+.home-sub-heading {
+  text-align: center;
+  font-size: $font-22;
+  font-family: $robo-bold;
+  padding: 30px 0 70px;
+}
+.our-certificate {
+  ul {
+    position: relative;
+    padding: 0 0 40px;
+    li {
+      height: 130px;
+      cursor: pointer;
+      display: flex !important;
+      @include align-items(center);
+      @include justify-content(center);
+      @include transition(0.5s all);
+      img {
+        @include transition(0.5s all);
+      }
+      &:hover {
+        img {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+        }
+      }
+    }
+    .slick-arrow {
+      width: 41px;
+      height: 10px;
+      background-image: url("../images/certificate/arrows.png");
+      background-repeat: no-repeat;
+      background-position: left top;
+      text-indent: -9999px;
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -40px;
+      @include translate(-50%, 0);
+      &.slick-next {
+        background-position: right top;
+        margin-left: 40px;
+      }
+    }
+  }
+}
+
+//Footer
+.foo-enquires {
+  width: 1260px;
+  margin: 40px auto 0;
+  background: #3fb1b3;
+  padding: 95px 0 45px;
+  color: #fff;
+  position: relative;
+  h1 {
+    font-size: 35px;
+    font-family: $mont-bold;
+  }
+  h2 {
+    font-size: 22px;
+    padding: 30px 0 80px;
+    font-family: $robo-bold;
+  }
+  form {
+    width: 960px;
+    margin: 0 auto;
+    font-size: $font-14;
+    @include flexbox();
+    @include justify-content(space-between);
+    @include flex-wrap (wrap);
+    input {
+      background: none;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #fff;
+      width: 210px;
+      padding: 10px 0;
+      color: #fff;
+      text-transform: uppercase;
+      &[type="submit"] {
+        margin: 37px auto 0;
+        background: #bb0303;
+        border: none;
+        width: 185px;
+        height: 60px;
+        border-radius: 5px;
+        @include transition(0.5s all);
+        &:hover {
+          background: #000033;
+        }
+      }
+      &::-webkit-input-placeholder { /* Chrome */
+        color: #fff;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: #fff;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: #fff;
+        opacity: 1;
+      }
+      &:-moz-placeholder { /* Firefox 4 - 18 */
+        color: #fff;
+        opacity: 1;
+      }
+    }
+    select {
+      @extend input;
+      option {
+        background: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+}
+.footer-wrap {
+  font-size: $font-16;
+  background: url("../images/footer_bg.jpg") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+  padding: 300px 0 48px;
+  margin: -280px 34px 34px;
+}
+.foo-container {
+  width: 1060px;
+  margin: 0 auto 70px;
+  @include flexbox();
+  @include justify-content(space-between);
+  h3 {
+    color: #3fb1b3;
+    text-transform: uppercase;
+    margin: 0 0 35px;
+    font-family: $robo-bold;
+  }
+  ul {
+    font-family: $robo-reg;
+    li {
+      margin: 0 0 20px;
+      @include flexbox();
+      @include justify-content(space-between);
+      a {
+        color: #979ba6;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.copy-right {
+  color: #979ba6;
+  font-size: $font-14;
+}
+
+@import 'about';
+@import 'probiatics';
+@import "manufacture";
+@import "services";
+@import "quality";
+@import "product";
+@import 'homeSub';
+@import 'overHome';
+@import 'media';
+
+// Fonts
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot');
+    src: url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+         url('../fonts/fontawesome-webfont.woff2') format('woff2'),
+         url('../fonts/fontawesome-webfont.woff') format('woff'),
+         url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+         url('../fonts/fontawesome-webfont.svg#fontawesome-webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('../fonts/roboto.bold-webfont.eot');
+    src: url('../fonts/roboto.bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto.bold-webfont.woff2') format('woff2'), url('../fonts/roboto.bold-webfont.woff') format('woff'), url('../fonts/roboto.bold-webfont.ttf') format('truetype'), url('../fonts/roboto.bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../fonts/roboto.regular-webfont.eot');
+    src: url('../fonts/roboto.regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto.regular-webfont.woff2') format('woff2'), url('../fonts/roboto.regular-webfont.woff') format('woff'), url('../fonts/roboto.regular-webfont.ttf') format('truetype'), url('../fonts/roboto.regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'robotomedium';
+    src:url('../fonts/roboto-medium_1-webfont.woff2') format('woff2'), url('../fonts/roboto-medium_1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'robotolight';
+    src:url('../fonts/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratBold';
+    src: url('../fonts/MontserratBold.eot');
+    src: url('../fonts/MontserratBold.eot') format('embedded-opentype'),
+         url('../fonts/MontserratBold.woff2') format('woff2'),
+         url('../fonts/MontserratBold.woff') format('woff'),
+         url('../fonts/MontserratBold.ttf') format('truetype'),
+         url('../fonts/MontserratBold.svg#MontserratBold') format('svg');
+}
+@font-face {
+    font-family: 'MontserratMedium';
+    src: url('../fonts/MontserratMedium.eot');
+    src: url('../fonts/MontserratMedium.eot') format('embedded-opentype'),
+         url('../fonts/MontserratMedium.woff2') format('woff2'),
+         url('../fonts/MontserratMedium.woff') format('woff'),
+         url('../fonts/MontserratMedium.ttf') format('truetype'),
+         url('../fonts/MontserratMedium.svg#MontserratMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'montserratbold';
+    src: url('../fonts/montserrat-bold-webfont.eot');
+    src: url('../fonts/montserrat-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/montserrat-bold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-bold-webfont.woff') format('woff'),
+         url('../fonts/montserrat-bold-webfont.ttf') format('truetype'),
+         url('../fonts/montserrat-bold-webfont.svg#montserratbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratthin';
+    src: url('../fonts/montserrat-thin-webfont.eot');
+    src: url('../fonts/montserrat-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/montserrat-thin-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-thin-webfont.woff') format('woff'),
+         url('../fonts/montserrat-thin-webfont.ttf') format('truetype'),
+         url('../fonts/montserrat-thin-webfont.svg#montserratthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'robotobold';
+    src: url('../fonts/roboto.bold-webfont.eot');
+    src: url('../fonts/roboto.bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto.bold-webfont.woff2') format('woff2'),
+         url('../fonts/roboto.bold-webfont.woff') format('woff'),
+         url('../fonts/roboto.bold-webfont.ttf') format('truetype'),
+         url('../fonts/roboto.bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/roboto.light-webfont.eot');
+    src: url('../fonts/roboto.light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto.light-webfont.woff2') format('woff2'),
+         url('../fonts/roboto.light-webfont.woff') format('woff'),
+         url('../fonts/roboto.light-webfont.ttf') format('truetype'),
+         url('../fonts/roboto.light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
